@@ -1,0 +1,29 @@
+<template>
+    <div class="dashboard-shell slds-card slds-p-around_medium">
+        <header class="dashboard-header slds-p-around_large">
+            <div class="header-copy">
+                <p class="eyebrow">Operations Center</p>
+                <h1>Release Management Dashboard</h1>
+            </div>
+            <div class="header-badge">
+                <lightning-icon icon-name="utility:timeline" size="small"></lightning-icon>
+                <span>Live release insights</span>
+            </div>
+        </header>
+
+        <section class="cards-grid" aria-label="Release management metrics">
+            <template for:each={metrics} for:item="metric">
+                <article key={metric.title} class="metric-card">
+                    <div class={metric.iconClass}>
+                        <lightning-icon icon-name={metric.iconName} size="medium"></lightning-icon>
+                    </div>
+                    <div class="card-body">
+                        <h2>{metric.title}</h2>
+                        <p class="metric-value">{metric.value}</p>
+                        <p class="metric-subtitle">{metric.subtitle}</p>
+                    </div>
+                </article>
+            </template>
+        </section>
+    </div>
+</template>
