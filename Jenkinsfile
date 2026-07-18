@@ -2,9 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+
+        stage('Checkout') {
             steps {
-                echo 'Release Management CI/CD Pipeline Started'
+                checkout scm
+            }
+        }
+
+        stage('Verify Salesforce CLI') {
+            steps {
+                bat 'sf --version'
             }
         }
     }
