@@ -31,5 +31,10 @@ pipeline {
                 bat 'sf org list'
             }
         }
+        stage('Validate Deployment') {
+    steps {
+        bat 'sf project deploy validate --source-dir force-app'
+    }
+}
     }
 }   
