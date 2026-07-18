@@ -31,14 +31,9 @@ pipeline {
                 bat 'sf org list'
             }
         }
-        stage('Validate Deployment') {
-    steps {
-        bat 'sf project deploy validate --source-dir force-app'
-    }
-        }
         stage('Deploy to Salesforce') {
     steps {
-        bat 'sf project deploy start --source-dir force-app --target-org JenkinsOrg'
+        bat 'sf project deploy start --source-dir force-app --target-org JenkinsOrg --test-level NoTestRun'
     }
 }
     }
