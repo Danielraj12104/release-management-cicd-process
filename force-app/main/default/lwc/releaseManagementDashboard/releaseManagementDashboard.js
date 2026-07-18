@@ -45,4 +45,33 @@ export default class ReleaseManagementDashboard extends LightningElement {
             iconClass: 'card-icon teal-accent'
         }
     ];
+
+    detailCards = [
+        {
+            title: 'Last Deployment',
+            status: 'Successful',
+            statusClass: 'slds-badge slds-theme_success detail-badge',
+            iconName: 'utility:history',
+            iconClass: 'card-icon blue-accent',
+            fields: [
+                { label: 'Deployment Time', value: '16 Jul 2026, 11:45 AM' },
+                { label: 'Deployment By', value: 'Jenkins Pipeline' },
+                { label: 'Environment', value: 'Developer Sandbox' },
+                { label: 'Status', value: 'Successful' }
+            ]
+        },
+        {
+            title: 'Pipeline Information',
+            status: 'Running',
+            statusClass: 'slds-badge slds-theme_warning detail-badge',
+            iconName: 'utility:custom_notification',
+            iconClass: 'card-icon purple-accent',
+            fields: [
+                { label: 'Pipeline Name', value: 'release-management-cicd' },
+                { label: 'Branch', value: 'feature/release-dashboard-v2' },
+                { label: 'Build Number', value: '#15' },
+                { label: 'Trigger', value: 'GitHub Push' }
+            ]
+        }
+    ];
 }

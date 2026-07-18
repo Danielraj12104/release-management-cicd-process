@@ -25,5 +25,30 @@
                 </article>
             </template>
         </section>
+
+        <section class="detail-grid" aria-label="Release execution details">
+            <template for:each={detailCards} for:item="detail">
+                <article key={detail.title} class="detail-card">
+                    <div class="detail-card-header">
+                        <div class={detail.iconClass}>
+                            <lightning-icon icon-name={detail.iconName} size="small"></lightning-icon>
+                        </div>
+                        <div class="detail-heading">
+                            <h2>{detail.title}</h2>
+                            <span class={detail.statusClass}>{detail.status}</span>
+                        </div>
+                    </div>
+
+                    <ul class="detail-list">
+                        <template for:each={detail.fields} for:item="field">
+                            <li key={field.label} class="detail-item">
+                                <span class="detail-label">{field.label}</span>
+                                <span class="detail-value">{field.value}</span>
+                            </li>
+                        </template>
+                    </ul>
+                </article>
+            </template>
+        </section>
     </div>
 </template>
