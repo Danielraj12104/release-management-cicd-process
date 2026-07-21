@@ -4,7 +4,7 @@ export default class ReleaseManagementDashboard extends LightningElement {
     metrics = [
         {
             title: 'Current Release',
-            value: 'v1.0.0',
+            value: 'v1.0.1',
             subtitle: 'Latest deployment version',
             iconName: 'utility:launch',
             iconClass: 'card-icon blue-accent'
